@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static',filename='wall.css') }}" media="screen">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Basic&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Libre&family=Basic&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Libre&family=Basic&display=swap" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+
+   
+
+
+    <script type="text/javascript">
+        var note = JSON.parse('{{ notes|safe }}');
+    </script>
+    <script class="u-script" type="text/javascript" src="{{ url_for('static',filename='wall.js') }}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{{ url_for('static',filename='htmlcanvas2.js') }}" defer=""></script>
+
+
+
+</head>
+
+<body id="bodymain" class="specific">
+    <div class="nav">
+        <h1>TEAM {{teamid}}'S WALL</h1>
+        <h2>{{ project }}</h2>
+    </div>
+    <div class="heading">
+        <div class="heading-body">
+            <p>EMPATHISE</p>
+        </div>
+        <div class="heading-body">
+            <p>DEFINE</p>
+        </div>
+
+        <div class="heading-body">
+            <p>IDEATE</p>
+        </div>
+
+        <div class="heading-body">
+            <p>PROTOTYPE</p>
+        </div>
+
+        <div class="heading-body">
+            <p>TEST</p>
+        </div>
+
+
+    </div>
+    <div id="step">
+        <div id="step1" class="box">
+        </div>
+        <div id="step2" class="box">
+        </div>
+        <div id="step3" class="box"></div>
+        <div id="step4" class="box">
+            {% for pic in pics %}
+            {% set tag = "<img src='/static/uploads/%s' />"|format(pic.image) %}
+
+
+            <div class="note">{{ tag|safe }}</div>
+
+            <!--<div class="note" style="background-image: url('uploads/{{ pic.image }}'); background-size:contain; background-color: black;"></div>-->
+            {% endfor %}
+        </div>
+        <div id="step5" class="box">
+        </div>
+
+    </div>
+
+   
+
+    
+</body>
+
+</html>

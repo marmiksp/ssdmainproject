@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Home</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<!-- <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all"> -->
+
+<link rel="stylesheet" href="{{ url_for('static',filename='layout.css') }}" media="screen"> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<!-- <script class="u-script" type="text/javascript" src="static/jquery-1.9.1.min.js" defer=""></script>
+<script class="u-script" type="text/javascript" src="static/nicepage.js" defer=""></script> -->
+
+
+
+
+</head>
+<body id="top" style="background-color: rgb(18, 18, 75);">
+
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+
+      <div class="wrapper row1">
+        <header id="header" class="clear"> 
+          <!-- ################################################################################################ -->
+          <div id="logo" class="fl_left">
+        <br><br>
+            <h1><a href='#'>Virtual Design Thinking Workshop</a></h1>
+            
+          </div>
+        
+          <!-- ################################################################################################ --> 
+        </header>
+      </div>
+      <br><br>
+      <!-- ################################################################################################ --> 
+      <!-- ################################################################################################ --> 
+      <!-- ################################################################################################ -->
+      <div class="wrapper row2" >
+        <div class="rounded" style="height: 40px;">
+          <nav id="mainav" class="clear"> 
+            <!-- ################################################################################################ -->
+            <ul class="clear">
+              
+              <li><a href="#" style="text-decoration: none; margin: 5px;">Home</a></li>
+          <li><a href="/register" style="text-decoration: none; margin: 5px;">Register</a></li>
+          <li><a href="/login" style="text-decoration: none; margin: 5px;">Login</a></li>
+              
+            </ul>
+            <!-- ################################################################################################ --> 
+          </nav>
+        </div>
+      </div>
+
+      <br>
+      <!-- ################################################################################################ --> 
+      <!-- ################################################################################################ --> 
+      <!-- ################################################################################################ -->
+      <div class="wrapper">
+        <div id="slider">
+          <div id="slide-wrapper" class="rounded clear"> 
+            <!-- ################################################################################################ -->
+            <figure id="slide-1"><a class="view" href="#"><img src="static/images/title.png" style="margin: auto;" alt="" width="600px" height="600px"></a>
+              
+            </figure>
+            <figure id="slide-2"><a class="view" href="#"><img src="static/images/step1.jpg" alt="" width="600px" height="600px"></a>
+              <figcaption>
+                <h2>Empathize</h2>
+                <p>The first stage of the design process is to understand the perspective of the target audience/customer/consumer to identify and address the problem at hand.</p>
+                
+              </figcaption>
+            </figure>
+            <figure id="slide-3"><a class="view" href="#"><img src="static/images/step2.jpeg" alt="" width="600px" height="600px"></a>
+              <figcaption>
+                <h2>Define</h2>
+                <p>Putting together all of the information gathered in the first stage, the next step is to define the problem statement clearly. The resulting problem statement should be captured in human-centered terms rather than focused on business goals.</p>
+                
+              </figcaption>
+            </figure>
+            <figure id="slide-4"><a class="view" href="#"><img src="static/images/step3.jpeg" alt="" width="600px" height="600px"></a>
+              <figcaption>
+                <h2>Ideate</h2>
+                <p>Explore solutions and think out-of-the-box in the ideation phase of the design thinking process.</p>
+                
+              </figcaption>
+            </figure>
+            <figure id="slide-5"><a class="view" href="#"><img src="static/images/step4.jpeg" alt="" width="600px" height="600px"></a>
+              <figcaption>
+                <h2>Prototype</h2>
+                <p>In prototyping, you create a quick version of your solution so you can get feedback from users.</p>
+                
+              </figcaption>
+            </figure>
+          
+          
+            <!-- ################################################################################################ -->
+            <ul id="slide-tabs">
+              <li><a href="#slide-1">Virtual Design Thinking Workshop</a></li>
+              <li><a href="#slide-2"> Phase 1 :<br> Empathize </a></li>
+              <li><a href="#slide-3">Phase 2 :<br>Define</a></li>
+              <li><a href="#slide-4">Phase 3 :<br>Ideate</a></li>
+              <li><a href="#slide-5">Phase 4 :<br>Prototype</a></li>
+            </ul>
+            <!-- ################################################################################################ --> 
+          </div>
+        </div>
+      </div>
+      <!-- ################################################################################################ --> 
+      <!-- ################################################################################################ --> 
+      <!-- ################################################################################################ -->
+      
+
+
+
+
+
+    </div>
+    <div class="col-2"></div>
+  </div>
+
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ -->
+
+<!-- JAVASCRIPTS --> 
+<!-- <script src="layout/scripts/jquery.min.js"></script> 
+<script src="layout/scripts/jquery.fitvids.min.js"></script> 
+<script src="layout/scripts/jquery.mobilemenu.js"></script> 
+<script src="layout/scripts/tabslet/jquery.tabslet.min.js"></script> -->
+
+<script class="u-script" type="text/javascript" src="{{ url_for('static',filename='jquery.min.js') }}" defer=""></script>
+<script class="u-script" type="text/javascript" src="{{ url_for('static',filename='jquery.fitvids.min.js') }}" defer=""></script>
+<script class="u-script" type="text/javascript" src="{{ url_for('static',filename='jquery.mobilemenu.js') }}" defer=""></script>
+<script class="u-script" type="text/javascript" src="{{ url_for('static',filename='jquery.tabslet.min.js') }}" defer=""></script>
+
+</body>
+</html>

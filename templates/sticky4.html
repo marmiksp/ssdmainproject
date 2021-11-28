@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static',filename='stickypicture.css') }}" media="screen">
+    <title>Design Workshop</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  
+  <style>
+
+#stickyboard
+{
+  background-color: green;
+}
+
+#stickyboard::-webkit-scrollbar {
+  width: 1em;
+}
+ 
+#stickyboard::-webkit-scrollbar-track {
+
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+ 
+#stickyboard::-webkit-scrollbar-thumb {
+
+  background-color: #5bd9d4;
+  outline: 1px solid slategrey;
+  border-radius: 5px;
+}
+
+.nav-link
+{
+  color: white;
+  font-weight: bolder;
+}
+
+  </style>
+  
+  
+  </head>
+  <body style="background-color: rgb(199, 228, 216)">
+   
+
+
+
+
+
+
+
+   
+<!-- <script>
+
+    $(
+      function(){
+          window.setInterval( function(){
+              loadnewsticky()
+          }, 1000)
+
+
+          function loadnewsticky(){
+              $.ajax({
+                  url:"/addnewsticky",
+                  type:"POST",
+                  dataType: "json",
+                  success: function(data){
+                      $(newsticky).replaceWith(data)
+                  }
+              });
+          }
+      });
+
+
+</script> -->
+
+
+<nav class="navbar navbar-expand-lg navbar bg" style="background-color: rgb(42, 109, 78);">
+  <a class="navbar-brand" href="" style="font-weight: bolder; color: rgb(192, 192, 235);">Virtual Design Workshop</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/sticky1/{{ teamid }}" >EMPATHISE  <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+          <a class="nav-link" href="/sticky2/{{ teamid }}" >DEFINE </span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/sticky3/{{ teamid }}" >IDEATE </span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/sticky4/{{ teamid }}" style="background-color: brown; color: white;">PROTOTYPE </span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/sticky5/{{ teamid }}" >TEST </span></a>
+        </li>
+      
+    </ul>
+    <!-- <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form> -->
+
+    <p style="color: white; font-weight: bolder; margin-right:10px; font-size: 25px; ">Team Id : {{ teamid }} </p>
+
+
+    <p><a href="/wall/{{teamid}}" style="text-decoration: none; font-weight: bolder; padding: 5px; margin: 4px; color: rgb(21, 46, 43); background-color: rgb(132, 130, 238);">Show Wall</a></p>
+  </div>
+</nav>
+
+<br>
+<h2 style="text-align: center; color: purple;">PROTOTYPE PHASE</h2>
+
+
+
+
+
+
+
+    <div class="row">
+        <div class="col-2"></div>
+        <div id="stickyboard" class="col-8" style="height: 400px; margin:15px; border-radius: 5px;text-align: center;
+display: grid;grid-template-columns: repeat(2, 1fr);overflow-y: scroll;border: 2px; border-color: black;
+        background-color: rgb(170, 194, 183);">
+          {% for pic in pics %}
+            {% set tag = "<img src='/static/uploads/%s' />"|format(pic.image) %}
+            
+
+            <div class="note">{{ tag|safe }}
+              <a href="/sticky4/picdelete/{{ pic.id }}" style="border: 2px solid black; float: right; padding: 1px; border-radius: 4px; text-decoration: none;color: red; font-weight: bold;">&#10060;</a>
+            </div>
+            
+            <!--<div class="note" style="background-image: url('uploads/{{ pic.image }}'); background-size:contain; background-color: black;"></div>-->
+            {% endfor %}
+           
+
+        </div>
+        <div class="col-2"> </div>
+
+    </div>
+
+    <div class="label" style="justify-content: center;align-items: center;text-align: center; margin-top: 15px;">
+      <h2 style="color: rgb(61, 61, 158);">Select a Prototype to upload</h2>
+      <form method="post" action="/forupload/{{ teamid }}" enctype="multipart/form-data">
+        <dl>
+        <p>
+          <input type="file" name="file" autocomplete="off" required style="color: darkcyan; ">
+        </p>
+        </dl>
+        <p>
+          <button type="button" class="btn btn-primary"><input type="submit" value="Submit" style="color: white; font-weight: bolder; background-color: rgb(77, 77, 252);"></button>
+        
+      </p>
+    </form>
+    </div>
+    
+
+<hr>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+

@@ -1,0 +1,89 @@
+ .u-section-1 {
+  background-image: url("images/vcvv-min.jpg") ;
+  opacity: 1.98;
+ 
+}
+
+.u-section-1 .u-sheet-1 {
+  min-height: 585px;
+}
+
+.u-section-1 .u-text-1 {
+  margin: 80px auto 0;
+}
+
+.u-section-1 .u-text-2 {
+  font-size: 1.2rem;
+  font-weight: bolder;
+  margin: 23px auto 0;
+}
+
+.u-section-1 .u-text-3 {
+  font-size: 1.125rem;
+  text-align: center;
+  font-weight: bolder;
+  width: 318px;
+  margin: 80px auto 0;
+}
+
+.u-section-1 .u-btn-1 {
+  background-image: linear-gradient(to right, #2f4ace, #9583e6cb);
+  border-style: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 0px;
+  margin: 12px auto 0;
+  padding: 9px 22px;
+}
+
+.u-section-1 .u-text-4 {
+  font-size: 1.125rem;
+  width: 180px;
+  font-weight: bolder;
+  margin: 12px auto 0;
+}
+
+.u-section-1 .u-btn-2 {
+  background-image: linear-gradient(to right, #2f4ace, #9583e6cb);
+  border-style: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  letter-spacing: 0px;
+  margin: 12px auto 0;
+  padding: 8px 23px 10px 21px;
+}
+
+@media (max-width: 1199px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 462px;
+  }
+}
+
+@media (max-width: 991px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 354px;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 266px;
+  }
+
+  .u-section-1 .u-text-4 {
+    margin-top: 175px;
+  }
+
+  .u-section-1 .u-btn-2 {
+    margin-top: -168px;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 167px;
+  }
+}

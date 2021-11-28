@@ -1,0 +1,50 @@
+.box
+{
+   
+   
+   
+    
+    height: 400px;
+    margin:15px;
+    border-radius: 5px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    overflow-y: scroll;
+    border: 2px;
+    border-color: black;
+    /*flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;*/
+}
+
+.box p
+{
+  text-align: center;
+  font-size: 40px;
+  font-family: 'Averia Libre', cursive;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  
+}
+
+.note
+{
+    height: 300px;
+    width: 470px;
+    margin: 10px;
+    margin-bottom:30px;
+    padding: 5px;
+    font-family: 'Averia Libre', cursive;
+    border-radius: 5px;
+    font-family: 'Basic', sans-serif;;
+
+   
+}
+
+.note img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
